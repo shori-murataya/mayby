@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_07_21_035852) do
 
   create_table "comments", force: :cascade do |t|
-    t.text "content"
+    t.text "content" # TODO: null: falseオプションが欲しいところ
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,13 +28,13 @@ ActiveRecord::Schema.define(version: 2020_07_21_035852) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "name"
+    t.string "name" # title
     t.text "howto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.string "count"
-    t.string "difficulty"
+    t.string "count" # TODO:  target_count, 参加人数 わかりやすい英語を
+    t.string "difficulty" # TODO:  要リファクタリング: emumを使いたいところ
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_07_21_035852) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_name"
+    t.string "image_name" # TODO: carrierwaveに載せ替える。
   end
 
 end
